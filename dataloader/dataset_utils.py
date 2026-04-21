@@ -17,7 +17,7 @@ from torchvision import datasets, transforms
 
 
 # 0.1 radians ~= 5.73 degrees, and torchvision's shear parameter uses degrees.
-SHEAR_DEGREES = 5.73
+SHEAR_DEGREES = np.rad2deg(0.1)
 
 
 class OtsuCenterCropResize:
