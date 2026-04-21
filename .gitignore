@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.ipynb_checkpoints
