@@ -106,8 +106,10 @@ def plot_confusion_matrices(
     axes[0].set_title("Confusion Matrix (Raw Counts)")
 
     disp_norm = ConfusionMatrixDisplay(confusion_matrix=cm_row_norm, display_labels=class_labels)
-    disp_norm.plot(ax=axes[1], cmap="Greens", values_format=".2f", colorbar=False)
-    axes[1].set_title("Confusion Matrix (Row-Normalized)")
+    disp_norm.plot(ax=axes[1], cmap="Greens", values_format=".4f", colorbar=False)
+    for value, text in zip(cm_row_norm.ravel(), disp_norm.text_.ravel()):
+        text.set_text("0" if np.isclose(value, 0.0) else f"{value:.4f}")
+    axes[1].set_title("Confusion Matrix (Row-Normalized Proportions)")
 
     plt.tight_layout()
     plt.show()
