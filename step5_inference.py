@@ -16,7 +16,7 @@ DIGIT_UNICODE = ["०", "१", "२", "३", "४", "५", "६", "७", "८", 
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Step 5: Interactive single-image inference")
+    parser = argparse.ArgumentParser(description="Step 5: Interactive single-image inference or folder scan")
     parser.add_argument(
         "--model-name",
         type=str,
@@ -34,6 +34,24 @@ def parse_args() -> argparse.Namespace:
         type=str,
         default="",
         help="Optional single image path for one-shot inference. If omitted, interactive mode starts.",
+    )
+    parser.add_argument(
+        "--folder",
+        type=str,
+        default="",
+        help="Optional folder to scan recursively for PNG files and print predictions/confidences.",
+    )
+    parser.add_argument(
+        "--precision",
+        type=int,
+        default=12,
+        help="Number of decimal places to print for confidence values.",
+    )
+    parser.add_argument(
+        "--min-confidence",
+        type=float,
+        default=0.0,
+        help="Only report images with predicted confidence greater than this value.",
     )
     parser.add_argument(
         "--show-unicode",
@@ -99,6 +117,10 @@ def _plot_probabilities(probabilities: torch.Tensor, class_names: Sequence[str])
     plt.show()
 
 
+def _format_confidence(confidence: float, precision: int) -> str:
+    return f"{confidence:.{precision}f}"
+
+
 def predict_single_image(
     image_path: Path,
     model: torch.nn.Module,
@@ -106,6 +128,9 @@ def predict_single_image(
     class_names: Sequence[str],
     device: torch.device,
     show_unicode: bool = False,
+    precision: int = 12,
+    plot_probabilities: bool = True,
+    verbose: bool = True,
 ) -> tuple[str, float]:
     if not image_path.exists():
         raise FileNotFoundError(f"Image not found: {image_path}")
@@ -120,19 +145,63 @@ def predict_single_image(
         confidence = float(probs[pred_idx].item())
 
     predicted_label = str(class_names[pred_idx])
-    if show_unicode:
-        try:
-            predicted_unicode = DIGIT_UNICODE[int(predicted_label)]
-            print(f"Predicted numeral: {predicted_label} ({predicted_unicode})")
-        except (ValueError, IndexError):
+    if verbose:
+        if show_unicode:
+            try:
+                predicted_unicode = DIGIT_UNICODE[int(predicted_label)]
+                print(f"Predicted numeral: {predicted_label} ({predicted_unicode})")
+            except (ValueError, IndexError):
+                print(f"Predicted numeral: {predicted_label}")
+        else:
             print(f"Predicted numeral: {predicted_label}")
-    else:
-        print(f"Predicted numeral: {predicted_label}")
 
-    print(f"Confidence: {confidence:.4f}")
-    _plot_probabilities(probabilities=probs, class_names=class_names)
+        print(f"Confidence: {_format_confidence(confidence, precision)}")
+
+    if plot_probabilities:
+        _plot_probabilities(probabilities=probs, class_names=class_names)
 
     return predicted_label, confidence
+
+
+def scan_folder_for_predictions(
+    folder_path: Path,
+    model: torch.nn.Module,
+    transform,
+    class_names: Sequence[str],
+    device: torch.device,
+    show_unicode: bool,
+    precision: int,
+    min_confidence: float,
+) -> None:
+    if not folder_path.exists():
+        raise FileNotFoundError(f"Folder not found: {folder_path}")
+
+    png_files = sorted(folder_path.rglob("*.png"))
+    if not png_files:
+        print(f"No PNG files found in: {folder_path}")
+        return
+
+    print(f"Scanning {len(png_files)} PNG files in: {folder_path}")
+    matches = 0
+
+    for image_path in png_files:
+        predicted_label, confidence = predict_single_image(
+            image_path=image_path,
+            model=model,
+            transform=transform,
+            class_names=class_names,
+            device=device,
+            show_unicode=show_unicode,
+            precision=precision,
+            plot_probabilities=False,
+            verbose=False,
+        )
+
+        if confidence > min_confidence:
+            matches += 1
+            print(f"File: {image_path} -> class {predicted_label}, confidence {_format_confidence(confidence, precision)}")
+
+    print(f"Finished scan. Files above threshold ({min_confidence}): {matches}/{len(png_files)}")
 
 
 def interactive_loop(
@@ -179,6 +248,22 @@ def main() -> None:
     print(f"Device: {device}")
     print("=" * 70)
 
+    if args.folder and args.image:
+        raise ValueError("Use only one of --image or --folder, not both.")
+
+    if args.folder:
+        scan_folder_for_predictions(
+            folder_path=Path(args.folder),
+            model=model,
+            transform=transform,
+            class_names=class_names,
+            device=device,
+            show_unicode=args.show_unicode,
+            precision=args.precision,
+            min_confidence=args.min_confidence,
+        )
+        return
+
     if args.image:
         predict_single_image(
             image_path=Path(args.image),
@@ -187,6 +272,7 @@ def main() -> None:
             class_names=class_names,
             device=device,
             show_unicode=args.show_unicode,
+            precision=args.precision,
         )
         return
 

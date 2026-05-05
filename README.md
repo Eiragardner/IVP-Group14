@@ -16,7 +16,7 @@ This project performs 10-class classification for digits 0-9 using grayscale ima
 - step2_model.py: CNN architecture and loss helpers
 - step3_training.py: training entrypoint
 - step4_evaluation.py: validation evaluation, confusion matrices, and submission generation
-- step5_inference.py: single-image interactive inference utility
+- step5_inference.py: single-image inference, folder scans, and confidence filtering
 - Training/Trained_models: per-model training/evaluation artifacts
 
 ## Environment Setup
@@ -120,8 +120,8 @@ python step4_evaluation.py --model-name "OLD Baseline CNN"
 
 What Step 4 computes:
 
-1. Loads selected checkpoint from Training/Trained_models/<model_name>
-2. Rebuilds train/validation split from checkpoint data_config
+1. Loads selected checkpoint from `Training/Trained_models/<model_name>`
+2. Rebuilds train/validation split from checkpoint `data_config`
 3. Evaluates on the validation set
 4. Prints:
 - final validation accuracy
@@ -131,19 +131,29 @@ What Step 4 computes:
 - raw counts
 - row-normalized values
 6. Displays one validation sample per class with true/pred labels (errors shown in red)
-7. Creates submission CSV for test set IDs
+7. Creates two submission files:
+- `Training/Trained_models/<model_name>/<model_name>.csv` for the full test set
+- `Training/Trained_models/<model_name>/<model_name>_submission.csv` for the sample-ID structure
 
-Submission output path:
+Submission notes:
 
-- Training/Trained_models/<model_name>/submission_step4.csv
+- `CSV files/test.csv` contains the full list of test IDs to predict.
+- `CSV files/sample_submission.csv` is only a small example file showing the submission format; it contains four example rows.
+- The full submission file should be used for the real competition upload.
 
-How test submission is generated:
+How the full test submission is generated:
 
-1. Reads IDs from CSV files/test.csv
-2. Loads each image from dataset/test/<Id>.png
+1. Reads IDs from `CSV files/test.csv`
+2. Loads each image from `dataset/test/<Id>.png`
 3. Applies the same validation transform/preprocessing
-4. Runs inference with selected model
-5. Writes Id,Category predictions to submission_step4.csv
+4. Runs inference with the selected model
+5. Writes `Id,Category` predictions to `<model_name>.csv`
+
+How the sample-structured file is generated:
+
+1. Reads IDs from `CSV files/sample_submission.csv`
+2. Reuses the model predictions for those IDs
+3. Writes only those example rows to `<model_name>_submission.csv`
 
 ## Confusion Matrices: What Data They Use
 
@@ -184,6 +194,12 @@ Run one image directly:
 python step5_inference.py --model-name baseline_cnn --image "dataset/test/10002.png"
 ```
 
+Scan a whole folder of PNGs recursively:
+
+```bash
+python step5_inference.py --model-name baseline_cnn --folder dataset/test --precision 20 --min-confidence 0.9999999
+```
+
 Optional Devanagari display (if your UI/font supports it):
 
 ```bash
@@ -192,14 +208,15 @@ python step5_inference.py --model-name baseline_cnn --image "dataset/test/10002.
 
 What Step 5 does:
 
-1. Loads selected checkpoint from Training/Trained_models/<model_name>
-2. Rebuilds preprocessing settings from checkpoint data_config
+1. Loads selected checkpoint from `Training/Trained_models/<model_name>`
+2. Rebuilds preprocessing settings from checkpoint `data_config`
 3. Uses validation transform (preprocessing + normalization, no augmentation)
 4. Predicts a single image and prints:
 - predicted class label
-- confidence score (top softmax probability)
-5. Plots probability bars for all 10 classes
-6. Supports an interactive loop until you type quit
+- confidence score with configurable decimal precision
+5. Plots probability bars for all 10 classes in single-image mode
+6. Supports an interactive loop until you type `quit`
+7. Supports recursive folder scanning with optional `--min-confidence` filtering
 
 ## Notes for Team Usage
 
