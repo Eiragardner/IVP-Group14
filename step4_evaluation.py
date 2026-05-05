@@ -5,16 +5,15 @@ import csv
 from pathlib import Path
 from typing import Dict, List, Sequence, Tuple
 
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import torch
 from PIL import Image
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report
 from torch import Tensor
 from torch.utils.data import DataLoader, Dataset
 
 from dataloader.dataset_utils import build_dataloaders
+from Training.visualizations import collect_predictions, plot_confusion_matrices, plot_one_sample_per_class
 from step2_model import DevanagariCNN
 
 
@@ -44,132 +43,6 @@ class TestCsvDataset(Dataset[Tuple[Tensor, str]]):
 
 def _class_labels(class_names: Sequence[str]) -> List[str]:
     return [str(name) for name in class_names]
-
-
-@torch.no_grad()
-def _predict_loader(
-    model: torch.nn.Module,
-    loader: DataLoader,
-    device: torch.device,
-) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-    model.eval()
-
-    all_preds: List[np.ndarray] = []
-    all_labels: List[np.ndarray] = []
-    all_probs: List[np.ndarray] = []
-
-    for images, labels in loader:
-        images = images.to(device, non_blocking=True)
-        labels = labels.to(device, non_blocking=True)
-
-        logits = model(images)
-        probs = torch.softmax(logits, dim=1)
-        preds = logits.argmax(dim=1)
-
-        all_preds.append(preds.cpu().numpy())
-        all_labels.append(labels.cpu().numpy())
-        all_probs.append(probs.cpu().numpy())
-
-    y_pred = np.concatenate(all_preds)
-    y_true = np.concatenate(all_labels)
-    y_prob = np.vstack(all_probs)
-    return y_pred, y_true, y_prob
-
-
-def _plot_confusion_matrices(
-    y_true: np.ndarray,
-    y_pred: np.ndarray,
-    class_labels: Sequence[str],
-) -> None:
-    cm_counts = confusion_matrix(y_true, y_pred)
-    cm_row_norm = confusion_matrix(y_true, y_pred, normalize="true")
-
-    fig, axes = plt.subplots(1, 2, figsize=(15, 6))
-
-    sns.heatmap(
-        cm_counts,
-        annot=True,
-        fmt="d",
-        cmap="Blues",
-        cbar=False,
-        xticklabels=class_labels,
-        yticklabels=class_labels,
-        ax=axes[0],
-    )
-    axes[0].set_title("Confusion Matrix (Raw Counts)")
-    axes[0].set_xlabel("Predicted")
-    axes[0].set_ylabel("True")
-
-    sns.heatmap(
-        cm_row_norm,
-        annot=True,
-        fmt=".2f",
-        cmap="Greens",
-        cbar=False,
-        xticklabels=class_labels,
-        yticklabels=class_labels,
-        ax=axes[1],
-    )
-    axes[1].set_title("Confusion Matrix (Row-Normalized)")
-    axes[1].set_xlabel("Predicted")
-    axes[1].set_ylabel("True")
-
-    plt.tight_layout()
-    plt.show()
-
-
-def _plot_one_sample_per_class(
-    dataset,
-    model: torch.nn.Module,
-    class_names: Sequence[str],
-    class_labels: Sequence[str],
-    mean: float,
-    std: float,
-    device: torch.device,
-) -> None:
-    chosen_indices: Dict[int, int] = {}
-    for idx in range(len(dataset)):
-        _, label = dataset[idx]
-        label_idx = int(label)
-        if label_idx not in chosen_indices:
-            chosen_indices[label_idx] = idx
-        if len(chosen_indices) == len(class_names):
-            break
-
-    ordered_items = sorted(chosen_indices.items(), key=lambda x: x[0])
-    if not ordered_items:
-        print("No validation samples found to visualize.")
-        return
-
-    fig, axes = plt.subplots(2, 5, figsize=(16, 7))
-    axes = axes.flatten()
-
-    model.eval()
-    with torch.no_grad():
-        for plot_idx, (class_idx, sample_idx) in enumerate(ordered_items):
-            image_tensor, true_label = dataset[sample_idx]
-            input_tensor = image_tensor.unsqueeze(0).to(device)
-            logits = model(input_tensor)
-            pred_idx = int(torch.argmax(logits, dim=1).item())
-
-            display_image = (image_tensor * std + mean).clamp(0.0, 1.0).cpu().numpy().squeeze(0)
-
-            ax = axes[plot_idx]
-            ax.imshow(display_image, cmap="gray")
-            ax.axis("off")
-            title_color = "red" if pred_idx != int(true_label) else "black"
-            ax.set_title(
-                f"T:{class_labels[int(true_label)]} P:{class_labels[pred_idx]}",
-                color=title_color,
-                fontsize=11,
-            )
-
-    for remaining in range(len(ordered_items), len(axes)):
-        axes[remaining].axis("off")
-
-    fig.suptitle("Validation Samples (One Per Class)", fontsize=14)
-    plt.tight_layout()
-    plt.show()
 
 
 def _load_ids_from_test_csv(test_csv_path: Path) -> List[str]:
@@ -282,7 +155,7 @@ def main() -> None:
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
 
-    y_pred, y_true, _ = _predict_loader(model=model, loader=setup.val_loader, device=device)
+    y_pred, y_true, _ = collect_predictions(model=model, loader=setup.val_loader, device=device)
 
     final_val_acc = float((y_pred == y_true).mean())
     print(f"Final validation accuracy: {final_val_acc:.4f}")
@@ -305,9 +178,9 @@ def main() -> None:
     )
     print(report)
 
-    _plot_confusion_matrices(y_true=y_true, y_pred=y_pred, class_labels=class_labels)
+    plot_confusion_matrices(y_true=y_true, y_pred=y_pred, class_labels=class_labels)
 
-    _plot_one_sample_per_class(
+    plot_one_sample_per_class(
         dataset=setup.val_loader.dataset,
         model=model,
         class_names=setup.class_names,
@@ -330,43 +203,6 @@ def main() -> None:
         num_workers=int(data_cfg["num_workers"]),
         device=device,
     )
-
-    # Additionally create a submission that follows the sample_submission.csv structure/order
-    sample_submission_path = project_root / "CSV files" / "sample_submission.csv"
-    sample_output_path = model_run_dir / f"{args.model_name}_submission.csv"
-    if sample_submission_path.exists():
-        print(f"Creating sample-structured submission by merging full predictions: {sample_output_path}")
-
-        # Read back the full predictions we just wrote into a mapping id->category
-        full_pred_path = output_submission_path
-        full_map: Dict[str, str] = {}
-        if full_pred_path.exists():
-            with full_pred_path.open("r", newline="", encoding="utf-8") as fh:
-                reader = csv.DictReader(fh)
-                for row in reader:
-                    full_map[str(row["Id"]).strip()] = str(row["Category"]).strip()
-
-        # Load sample IDs (preserve their order)
-        sample_ids = _load_ids_from_test_csv(sample_submission_path)
-
-        # Build output rows containing only the sample IDs (preserving order)
-        out_rows: List[Tuple[str, str]] = []
-        for sid in sample_ids:
-            cat = full_map.get(sid, "")
-            out_rows.append((sid, cat))
-
-        # Write sample-only merged file
-        sample_output_path.parent.mkdir(parents=True, exist_ok=True)
-        with sample_output_path.open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.writer(handle)
-            writer.writerow(["Id", "Category"])
-            writer.writerows(out_rows)
-
-        print(f"Sample-structured submission (sample-only) written: {sample_output_path}")
-        print(f"Rows written: {len(out_rows)}")
-
-    else:
-        print(f"Sample submission file not found: {sample_submission_path} — skipping sample-structured output.")
 
 
 if __name__ == "__main__":

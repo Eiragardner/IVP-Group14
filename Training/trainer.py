@@ -4,7 +4,6 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import matplotlib.pyplot as plt
 import torch
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ReduceLROnPlateau
@@ -15,6 +14,7 @@ from step2_model import DevanagariCNN, build_loss
 
 from .config import DataConfig, EpochMetrics, TrainingConfig
 from .runtime import CsvLogger, format_epoch_message, make_epoch_metrics, resolve_run_paths
+from .visualizations import plot_training_curves
 
 
 @torch.no_grad()
@@ -71,38 +71,6 @@ def train_one_epoch(
     avg_loss = total_loss / max(total_count, 1)
     accuracy = total_correct / max(total_count, 1)
     return avg_loss, accuracy
-
-
-def plot_training_curves(history: List[EpochMetrics], output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    epochs = [metrics.epoch for metrics in history]
-    train_loss = [metrics.train_loss for metrics in history]
-    val_loss = [metrics.val_loss for metrics in history]
-    train_acc = [metrics.train_accuracy for metrics in history]
-    val_acc = [metrics.val_accuracy for metrics in history]
-
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-
-    axes[0].plot(epochs, train_loss, label="Train")
-    axes[0].plot(epochs, val_loss, label="Validation")
-    axes[0].set_title("Loss")
-    axes[0].set_xlabel("Epoch")
-    axes[0].set_ylabel("Loss")
-    axes[0].legend()
-    axes[0].grid(True, alpha=0.3)
-
-    axes[1].plot(epochs, train_acc, label="Train")
-    axes[1].plot(epochs, val_acc, label="Validation")
-    axes[1].set_title("Accuracy")
-    axes[1].set_xlabel("Epoch")
-    axes[1].set_ylabel("Accuracy")
-    axes[1].legend()
-    axes[1].grid(True, alpha=0.3)
-
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150)
-    plt.close(fig)
 
 
 def save_checkpoint(

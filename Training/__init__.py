@@ -4,9 +4,12 @@ from .trainer import train_model
 from .visualizations import (
     collect_predictions,
     plot_confusion_matrix,
+    plot_confusion_matrices,
     plot_per_class_accuracy,
+    plot_one_sample_per_class,
     plot_precision_recall_curves,
     plot_roc_curves,
+    plot_training_curves,
     plot_training_vs_validation,
 )
 
