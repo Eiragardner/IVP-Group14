@@ -12,7 +12,7 @@ VAL_RATIO = 0.15
 SEED = 42
 NUM_WORKERS = 0
 IMAGE_SIZE = 32
-USE_OTSU_CROP_RESIZE = True
+USE_PREPROCESS_PIPELINE = True
 USE_TRAIN_ROTATION = True
 USE_TRAIN_AFFINE = True
 MAX_EPOCHS = 50
@@ -33,7 +33,7 @@ def main() -> None:
         seed=SEED,
         num_workers=NUM_WORKERS,
         image_size=IMAGE_SIZE,
-        use_otsu_crop_resize=USE_OTSU_CROP_RESIZE,
+        use_preprocess_pipeline=USE_PREPROCESS_PIPELINE,
         use_train_rotation=USE_TRAIN_ROTATION,
         use_train_affine=USE_TRAIN_AFFINE,
         max_epochs=MAX_EPOCHS,

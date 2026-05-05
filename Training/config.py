@@ -14,7 +14,7 @@ class DataConfig:
     seed: int = 42
     num_workers: int = 0
     image_size: int = 32
-    use_otsu_crop_resize: bool = True
+    use_preprocess_pipeline: bool = True
     use_train_rotation: bool = True
     use_train_affine: bool = True
 
@@ -52,7 +52,7 @@ def build_default_configs(
     seed: int = 42,
     num_workers: int = 0,
     image_size: int = 32,
-    use_otsu_crop_resize: bool = True,
+    use_preprocess_pipeline: bool = True,
     use_train_rotation: bool = True,
     use_train_affine: bool = True,
     max_epochs: int = 50,
@@ -69,7 +69,7 @@ def build_default_configs(
         seed=seed,
         num_workers=num_workers,
         image_size=image_size,
-        use_otsu_crop_resize=use_otsu_crop_resize,
+        use_preprocess_pipeline=use_preprocess_pipeline,
         use_train_rotation=use_train_rotation,
         use_train_affine=use_train_affine,
     )

@@ -19,45 +19,27 @@ from torchvision import datasets, transforms
 # 0.1 radians ~= 5.73 degrees, and torchvision's shear parameter uses degrees.
 SHEAR_DEGREES = np.rad2deg(0.1)
 
-
-class OtsuCenterCropResize:
-    """Convert to grayscale, apply Otsu binarization, tight-center crop glyph, then resize."""
+class PreprocessTransform:
+    """
+    New Preprocesing pipeline that includes:
+    1) Grayscale, 2) Normalize to [0,1], 3) Resize, 4) Center digit, 5) Binarize, 6) Mild dilation."""
 
     def __init__(self, size: int = 32, margin: int = 2) -> None:
         self.size = size
         self.margin = margin
 
-    @staticmethod
-    def _otsu_threshold(image: np.ndarray) -> int:
-        hist = np.bincount(image.ravel(), minlength=256).astype(np.float64)
-        total = hist.sum()
-        if total == 0:
-            return 0
-
-        prob = hist / total
-        omega = np.cumsum(prob)
-        mu = np.cumsum(prob * np.arange(256))
-        mu_total = mu[-1]
-
-        denominator = omega * (1.0 - omega)
-        denominator[denominator == 0] = 1e-12
-        sigma_between = ((mu_total * omega - mu) ** 2) / denominator
-        return int(np.argmax(sigma_between))
-
     def __call__(self, img: Image.Image) -> Image.Image:
         gray = img.convert("L")
-        arr = np.array(gray, dtype=np.uint8)
+        arr = np.array(gray, dtype=np.float32)
 
-        threshold = self._otsu_threshold(arr)
-        binary = (arr > threshold).astype(np.uint8)
+        arr = arr / 255.0
 
-        ones_count = int(binary.sum())
-        zeros_count = int(binary.size - ones_count)
-        fg_mask = binary == 1 if ones_count <= zeros_count else binary == 0
+        binary = (arr > 0.5).astype(np.uint8)
 
-        ys, xs = np.where(fg_mask)
+        ys, xs = np.where(binary == 1)
         if ys.size == 0 or xs.size == 0:
-            processed = Image.fromarray(arr, mode="L")
+            result = (arr * 255).astype(np.uint8)
+            processed = Image.fromarray(result, mode="L")
             return processed.resize((self.size, self.size), Image.Resampling.BILINEAR)
 
         y_min = max(0, int(ys.min()) - self.margin)
@@ -65,18 +47,24 @@ class OtsuCenterCropResize:
         x_min = max(0, int(xs.min()) - self.margin)
         x_max = min(arr.shape[1], int(xs.max()) + self.margin + 1)
 
-        crop_mask = fg_mask[y_min:y_max, x_min:x_max]
-        glyph = np.zeros(crop_mask.shape, dtype=np.uint8)
-        glyph[crop_mask] = 255
+        cropped = binary[y_min:y_max, x_min:x_max]
 
-        h, w = glyph.shape
+        h, w = cropped.shape
         side = max(h, w)
         square = np.zeros((side, side), dtype=np.uint8)
         y_offset = (side - h) // 2
         x_offset = (side - w) // 2
-        square[y_offset : y_offset + h, x_offset : x_offset + w] = glyph
+        square[y_offset:y_offset + h, x_offset:x_offset + w] = cropped
 
-        processed = Image.fromarray(square, mode="L")
+        kernel_size = 2
+        dilated = np.zeros_like(square)
+        for dy in range(kernel_size):
+            for dx in range(kernel_size):
+                dilated[dy:, dx:] |= square[:square.shape[0] - dy if dy else square.shape[0],
+                                             :square.shape[1] - dx if dx else square.shape[1]]
+
+        result = (dilated * 255).astype(np.uint8)
+        processed = Image.fromarray(result, mode="L")
         return processed.resize((self.size, self.size), Image.Resampling.BILINEAR)
 
 
@@ -160,9 +148,9 @@ def compute_mean_std(dataset: Dataset[Tuple[Tensor, int]], batch_size: int = 256
     return float(mean), float(std)
 
 
-def _build_base_preprocess(image_size: int, use_otsu_crop_resize: bool) -> List[Callable[[Image.Image], Image.Image]]:
-    if use_otsu_crop_resize:
-        return [OtsuCenterCropResize(size=image_size)]
+def _build_base_preprocess(image_size: int, use_preprocess_pipeline: bool) -> List[Callable[[Image.Image], Image.Image]]:
+    if use_preprocess_pipeline:
+        return [PreprocessTransform(size=image_size)]
 
     return [
         transforms.Grayscale(num_output_channels=1),
@@ -177,7 +165,7 @@ def build_dataloaders(
     seed: int = 42,
     num_workers: int = 0,
     image_size: int = 32,
-    use_otsu_crop_resize: bool = True,
+    use_preprocess_pipeline: bool = True,
     use_train_rotation: bool = True,
     use_train_affine: bool = True,
 ) -> DataSetup:
@@ -192,7 +180,7 @@ def build_dataloaders(
         targets=targets, val_ratio=val_ratio, seed=seed
     )
 
-    base_preprocess = _build_base_preprocess(image_size=image_size, use_otsu_crop_resize=use_otsu_crop_resize)
+    base_preprocess = _build_base_preprocess(image_size=image_size, use_preprocess_pipeline=use_preprocess_pipeline)
 
     preprocess_only = transforms.Compose(base_preprocess + [transforms.ToTensor()])
 

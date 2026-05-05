@@ -144,7 +144,7 @@ def train_model(data_config: DataConfig, training_config: TrainingConfig) -> Dic
         seed=data_config.seed,
         num_workers=data_config.num_workers,
         image_size=data_config.image_size,
-        use_otsu_crop_resize=data_config.use_otsu_crop_resize,
+        use_preprocess_pipeline=data_config.use_preprocess_pipeline,
         use_train_rotation=data_config.use_train_rotation,
         use_train_affine=data_config.use_train_affine,
     )
