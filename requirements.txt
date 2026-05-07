@@ -8,3 +8,5 @@ seaborn
 tqdm
 ipykernel
 jupyter
+plotly
+optuna
