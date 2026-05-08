@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Callable, Optional
 
 import torch
 from torch.optim import Adam
@@ -104,7 +104,7 @@ def save_checkpoint(
     torch.save(payload, checkpoint_path)
 
 
-def train_model(data_config: DataConfig, training_config: TrainingConfig) -> Dict[str, object]:
+def train_model(data_config: DataConfig, training_config: TrainingConfig, epoch_callback: Optional[Callable[[int, float], None]] = None) -> Dict[str, object]:
     setup = build_dataloaders(
         train_dir=data_config.train_dir,
         batch_size=data_config.batch_size,
@@ -168,6 +168,9 @@ def train_model(data_config: DataConfig, training_config: TrainingConfig) -> Dic
         csv_logger.log(metrics)
 
         print(format_epoch_message(metrics))
+
+        if epoch_callback is not None:
+            epoch_callback(epoch, val_acc)
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss

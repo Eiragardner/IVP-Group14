@@ -17,6 +17,7 @@ from Training.visualizations import collect_predictions, plot_confusion_matrices
 from step2_model import DevanagariCNN
 
 
+
 class TestCsvDataset(Dataset[Tuple[Tensor, str]]):
     """Test dataset driven by CSV Id values and the validation transform."""
 
@@ -118,7 +119,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    project_root = Path.cwd().resolve()
+    project_root = Path(__file__).parent.resolve()
     model_run_dir = project_root / "Training" / "Trained_models" / args.model_name
     checkpoint_path = model_run_dir / args.checkpoint_name
     test_csv_path = project_root / "CSV files" / "test.csv"
@@ -140,7 +141,7 @@ def main() -> None:
     data_cfg = checkpoint["data_config"]
 
     setup = build_dataloaders(
-        train_dir=Path(data_cfg["train_dir"]),
+        train_dir=project_root / "dataset" / "train",
         batch_size=int(data_cfg["batch_size"]),
         val_ratio=float(data_cfg["val_ratio"]),
         seed=int(data_cfg["seed"]),

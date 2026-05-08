@@ -7,7 +7,7 @@ from Training.trainer import train_model
 
 
 MODEL_NAME = "baseline_cnn"
-BATCH_SIZE = 64
+BATCH_SIZE = 116
 VAL_RATIO = 0.15
 SEED = 42
 NUM_WORKERS = 0
@@ -15,16 +15,16 @@ IMAGE_SIZE = 32
 USE_PREPROCESS_PIPELINE = True
 USE_TRAIN_ROTATION = True
 USE_TRAIN_AFFINE = True
-MAX_EPOCHS = 50
-LEARNING_RATE = 1e-3
-WEIGHT_DECAY = 0.0
+MAX_EPOCHS = 47
+LEARNING_RATE = 0.003858921100781887
+WEIGHT_DECAY = 2.8660953196330396e-05
 EARLY_STOPPING_PATIENCE = 10
 LOSS_NAME = "cross_entropy"
 LABEL_SMOOTHING = 0.0
 
 
 def main() -> None:
-    project_root = Path.cwd().resolve()
+    project_root = Path(__file__).parent.resolve()
     data_cfg, train_cfg = build_default_configs(
         project_root=project_root,
         model_name=MODEL_NAME,

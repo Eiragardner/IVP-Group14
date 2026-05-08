@@ -50,19 +50,19 @@ class DevanagariCNN(nn.Module):
         # The convolutional stack extracts local stroke and texture patterns.
         self.features = nn.Sequential(
             nn.Sequential(
-                ConvBNReLU(1, 32),
-                ConvBNReLU(32, 32),
-                nn.MaxPool2d(kernel_size=2, stride=2),
-                nn.Dropout2d(p=0.25),
-            ),
-            nn.Sequential(
-                ConvBNReLU(32, 64),
+                ConvBNReLU(1, 64),
                 ConvBNReLU(64, 64),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Dropout2d(p=0.25),
             ),
             nn.Sequential(
                 ConvBNReLU(64, 128),
+                ConvBNReLU(128, 128),
+                nn.MaxPool2d(kernel_size=2, stride=2),
+                nn.Dropout2d(p=0.25),
+            ),
+            nn.Sequential(
+                ConvBNReLU(128, 256),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 nn.Dropout2d(p=0.25),
             ),
@@ -72,11 +72,11 @@ class DevanagariCNN(nn.Module):
         self.pool = nn.AdaptiveAvgPool2d((1, 1))
 
         self.classifier = nn.Sequential(
-            nn.Linear(128, 256),
-            nn.BatchNorm1d(256),
+            nn.Linear(256, 469),
+            nn.BatchNorm1d(469),
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.5),
-            nn.Linear(256, num_classes),
+            nn.Linear(469, num_classes),
         )
 
     def forward(self, x: Tensor) -> Tensor:

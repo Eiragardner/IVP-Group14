@@ -189,13 +189,13 @@ def build_dataloaders(
 
     train_transform_steps = list(base_preprocess)
     if use_train_rotation:
-        train_transform_steps.append(transforms.RandomRotation(degrees=15, fill=0))
+        train_transform_steps.append(transforms.RandomRotation(degrees=27, fill=0))
     if use_train_affine:
         train_transform_steps.append(
             transforms.RandomAffine(
                 degrees=0,
-                translate=(0.1, 0.1),
-                scale=(0.9, 1.1),
+                translate=(0.10169678520782541, 0.10169678520782541),
+                scale=(0.8235212045461245, 1.1241993898522704),
                 shear=(-SHEAR_DEGREES, SHEAR_DEGREES),
                 fill=0,
             )
