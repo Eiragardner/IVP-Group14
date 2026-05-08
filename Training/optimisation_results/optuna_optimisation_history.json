@@ -1,0 +1,2989 @@
+[
+  {
+    "trial": 0,
+    "params": {
+      "learning_rate": 0.0005611516415334506,
+      "weight_decay": 0.006351221010640704,
+      "batch_size": 98,
+      "max_epochs": 68,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 73,
+      "rotation_degrees": 30,
+      "translation_range": 0.17486639612006327,
+      "scale_range": [
+        0.7637017332034828,
+        1.0545474901621301
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.15742692948967135
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.7397289034432056
+  },
+  {
+    "trial": 1,
+    "params": {
+      "learning_rate": 0.0007309539835912913,
+      "weight_decay": 1.461896279370496e-05,
+      "batch_size": 85,
+      "max_epochs": 31,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 329,
+      "rotation_degrees": 6,
+      "translation_range": 0.14113172778521577,
+      "scale_range": [
+        0.7511572371061874,
+        1.019515477895584
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.24251920443493832
+    },
+    "val_accuracy": 0.9976470588235294,
+    "val_loss": 1.0326529105504354
+  },
+  {
+    "trial": 2,
+    "params": {
+      "learning_rate": 0.0004066563313514797,
+      "weight_decay": 2.4586032763280077e-06,
+      "batch_size": 93,
+      "max_epochs": 55,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 203,
+      "rotation_degrees": 18,
+      "translation_range": 0.13200654190149197,
+      "scale_range": [
+        0.7554563366576581,
+        1.2908753883293675
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.26844820512829465
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 1.1074227016112383
+  },
+  {
+    "trial": 3,
+    "params": {
+      "learning_rate": 0.0015696396388661157,
+      "weight_decay": 0.0048696409415209,
+      "batch_size": 25,
+      "max_epochs": 35,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 190,
+      "rotation_degrees": 19,
+      "translation_range": 0.0711386337462144,
+      "scale_range": [
+        0.9406590942262119,
+        1.0223651931039313
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.014438483245469922
+  },
+  {
+    "trial": 4,
+    "params": {
+      "learning_rate": 0.00024970737145052745,
+      "weight_decay": 1.0521761868451139e-06,
+      "batch_size": 108,
+      "max_epochs": 77,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 343,
+      "rotation_degrees": 13,
+      "translation_range": 0.05953375254290355,
+      "scale_range": [
+        0.7932946965146986,
+        1.097554996608024
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9976470588235294,
+    "val_loss": 0.011567684847190429
+  },
+  {
+    "trial": 5,
+    "params": {
+      "learning_rate": 0.0059487468132197715,
+      "weight_decay": 7.742116473996259e-05,
+      "batch_size": 29,
+      "max_epochs": 77,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 75,
+      "rotation_degrees": 7,
+      "translation_range": 0.05471437785301014,
+      "scale_range": [
+        0.8909231233791342,
+        1.0943067943228981
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.07478766874466249
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.41130696551472534
+  },
+  {
+    "trial": 6,
+    "params": {
+      "learning_rate": 0.000661859559718348,
+      "weight_decay": 0.001052457468133564,
+      "batch_size": 41,
+      "max_epochs": 26,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 424,
+      "rotation_degrees": 9,
+      "translation_range": 0.1838838497734967,
+      "scale_range": [
+        0.8618026725746952,
+        1.2422320465492187
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.010613275683318338
+  },
+  {
+    "trial": 9,
+    "params": {
+      "learning_rate": 0.0028604390429824616,
+      "weight_decay": 2.9589152820953114e-05,
+      "batch_size": 87,
+      "max_epochs": 71,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 329,
+      "rotation_degrees": 22,
+      "translation_range": 0.05248817433917843,
+      "scale_range": [
+        0.8536279174897843,
+        1.0679487325593815
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008027613404902855
+  },
+  {
+    "trial": 11,
+    "params": {
+      "learning_rate": 0.007704463493598939,
+      "weight_decay": 5.46292309882721e-05,
+      "batch_size": 69,
+      "max_epochs": 63,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 67,
+      "rotation_degrees": 24,
+      "translation_range": 0.0591981502640532,
+      "scale_range": [
+        0.9068609803361926,
+        1.1302692766807894
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.007416393853523272
+  },
+  {
+    "trial": 12,
+    "params": {
+      "learning_rate": 0.008670479304752482,
+      "weight_decay": 2.1771627185116486e-05,
+      "batch_size": 18,
+      "max_epochs": 77,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 275,
+      "rotation_degrees": 12,
+      "translation_range": 0.08670324389674133,
+      "scale_range": [
+        0.9129336304968007,
+        1.1860536492619846
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9976470588235294,
+    "val_loss": 0.011276640919401924
+  },
+  {
+    "trial": 14,
+    "params": {
+      "learning_rate": 0.00392649435429955,
+      "weight_decay": 4.767692923943186e-05,
+      "batch_size": 77,
+      "max_epochs": 54,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 272,
+      "rotation_degrees": 25,
+      "translation_range": 0.05038874352384263,
+      "scale_range": [
+        0.8887985998089446,
+        1.1195881921161175
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.11663075843591585
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.5813375315011716
+  },
+  {
+    "trial": 15,
+    "params": {
+      "learning_rate": 0.0016657592412071388,
+      "weight_decay": 7.13071932784411e-06,
+      "batch_size": 82,
+      "max_epochs": 53,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 282,
+      "rotation_degrees": 25,
+      "translation_range": 0.07954517333886463,
+      "scale_range": [
+        0.9716577622916173,
+        1.1709245787909253
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008895764659129567
+  },
+  {
+    "trial": 16,
+    "params": {
+      "learning_rate": 0.004048893702057917,
+      "weight_decay": 3.314276695987814e-05,
+      "batch_size": 108,
+      "max_epochs": 48,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 431,
+      "rotation_degrees": 27,
+      "translation_range": 0.10755774043758679,
+      "scale_range": [
+        0.8275925016214393,
+        1.1295573357999031
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008439473174306947
+  },
+  {
+    "trial": 18,
+    "params": {
+      "learning_rate": 0.0023724136087385187,
+      "weight_decay": 4.501571612948486e-06,
+      "batch_size": 63,
+      "max_epochs": 43,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 136,
+      "rotation_degrees": 16,
+      "translation_range": 0.07118043801535262,
+      "scale_range": [
+        0.9587442697541712,
+        1.1190421536642017
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008953071932034672
+  },
+  {
+    "trial": 22,
+    "params": {
+      "learning_rate": 0.0022592097247684005,
+      "weight_decay": 3.449372884205658e-05,
+      "batch_size": 85,
+      "max_epochs": 59,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 250,
+      "rotation_degrees": 26,
+      "translation_range": 0.08179868248998501,
+      "scale_range": [
+        0.8885495089607707,
+        1.2094161767384684
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008692128068651073
+  },
+  {
+    "trial": 23,
+    "params": {
+      "learning_rate": 0.003647959689412978,
+      "weight_decay": 4.165557513572256e-06,
+      "batch_size": 108,
+      "max_epochs": 45,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 318,
+      "rotation_degrees": 23,
+      "translation_range": 0.0678962949553006,
+      "scale_range": [
+        0.9451346275839055,
+        1.1147298859064587
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008661019438055946
+  },
+  {
+    "trial": 24,
+    "params": {
+      "learning_rate": 0.0013013561921323535,
+      "weight_decay": 1.627971322865157e-06,
+      "batch_size": 72,
+      "max_epochs": 37,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 248,
+      "rotation_degrees": 28,
+      "translation_range": 0.05095357845620693,
+      "scale_range": [
+        0.9670519286626796,
+        1.052406766879011
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.009566646570096697
+  },
+  {
+    "trial": 25,
+    "params": {
+      "learning_rate": 0.0023823379047042985,
+      "weight_decay": 4.869613232082764e-06,
+      "batch_size": 88,
+      "max_epochs": 52,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 357,
+      "rotation_degrees": 25,
+      "translation_range": 0.0971474195444565,
+      "scale_range": [
+        0.9135702197804543,
+        1.1860240442444507
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008349051773274208
+  },
+  {
+    "trial": 26,
+    "params": {
+      "learning_rate": 0.000999217029828487,
+      "weight_decay": 2.3065393412099844e-05,
+      "batch_size": 57,
+      "max_epochs": 83,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 304,
+      "rotation_degrees": 20,
+      "translation_range": 0.08095290393441344,
+      "scale_range": [
+        0.7879554164920501,
+        1.2482599349960972
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.19982380565626268
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.876975996985155
+  },
+  {
+    "trial": 27,
+    "params": {
+      "learning_rate": 0.005130833263044888,
+      "weight_decay": 5.2223500842040277e-05,
+      "batch_size": 75,
+      "max_epochs": 62,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 155,
+      "rotation_degrees": 16,
+      "translation_range": 0.1989858029579758,
+      "scale_range": [
+        0.886706330492696,
+        1.152847904108512
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008513720576314988
+  },
+  {
+    "trial": 28,
+    "params": {
+      "learning_rate": 0.009636358102984235,
+      "weight_decay": 1.2550768592239695e-05,
+      "batch_size": 102,
+      "max_epochs": 69,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 264,
+      "rotation_degrees": 28,
+      "translation_range": 0.06423359662793308,
+      "scale_range": [
+        0.8415688753418387,
+        1.106322406230956
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.11646238173713372
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5789429068565368
+  },
+  {
+    "trial": 29,
+    "params": {
+      "learning_rate": 0.0028951570809936174,
+      "weight_decay": 0.00017365838276671845,
+      "batch_size": 100,
+      "max_epochs": 70,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 224,
+      "rotation_degrees": 30,
+      "translation_range": 0.10466489199706734,
+      "scale_range": [
+        0.8004913130307751,
+        1.0686977788938372
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.003997167271858365
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.04730322365375126
+  },
+  {
+    "trial": 31,
+    "params": {
+      "learning_rate": 0.003133162431544097,
+      "weight_decay": 4.698117937004813e-05,
+      "batch_size": 100,
+      "max_epochs": 71,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 292,
+      "rotation_degrees": 30,
+      "translation_range": 0.10631896887298266,
+      "scale_range": [
+        0.81633909290376,
+        1.0765145419330504
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.04423016602068948
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.27165550928489834
+  },
+  {
+    "trial": 33,
+    "params": {
+      "learning_rate": 0.00604997682034488,
+      "weight_decay": 1.9107212119344904e-05,
+      "batch_size": 83,
+      "max_epochs": 66,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 121,
+      "rotation_degrees": 23,
+      "translation_range": 0.07540147049484053,
+      "scale_range": [
+        0.7414358686309057,
+        1.0337908840528651
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.04515150913179691
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.27635232247558295
+  },
+  {
+    "trial": 37,
+    "params": {
+      "learning_rate": 0.002943912933477317,
+      "weight_decay": 2.766240083228651e-06,
+      "batch_size": 80,
+      "max_epochs": 38,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 303,
+      "rotation_degrees": 20,
+      "translation_range": 0.07834918175284396,
+      "scale_range": [
+        0.8437308402718752,
+        1.101837244296681
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.006561188707585581
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.07019531639183269
+  },
+  {
+    "trial": 41,
+    "params": {
+      "learning_rate": 0.003858921100781887,
+      "weight_decay": 2.8660953196330396e-05,
+      "batch_size": 116,
+      "max_epochs": 47,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 469,
+      "rotation_degrees": 27,
+      "translation_range": 0.10169678520782541,
+      "scale_range": [
+        0.8235212045461245,
+        1.1241993898522704
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 0.007661363980550246
+  },
+  {
+    "trial": 47,
+    "params": {
+      "learning_rate": 0.0026488190126247872,
+      "weight_decay": 7.792779633529972e-05,
+      "batch_size": 73,
+      "max_epochs": 66,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 399,
+      "rotation_degrees": 29,
+      "translation_range": 0.1022999475546854,
+      "scale_range": [
+        0.7794141165051713,
+        1.2297461828598708
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.06550852500293847
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.36960610514762354
+  },
+  {
+    "trial": 48,
+    "params": {
+      "learning_rate": 0.007215330468733718,
+      "weight_decay": 1.7436442630891745e-05,
+      "batch_size": 44,
+      "max_epochs": 75,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 221,
+      "rotation_degrees": 23,
+      "translation_range": 0.1300093877082405,
+      "scale_range": [
+        0.8543291119928945,
+        1.2675303390916437
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.010246272934713417
+  },
+  {
+    "trial": 57,
+    "params": {
+      "learning_rate": 0.0027146786819217074,
+      "weight_decay": 1.4909593821486132e-05,
+      "batch_size": 95,
+      "max_epochs": 64,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 306,
+      "rotation_degrees": 24,
+      "translation_range": 0.07362709814727814,
+      "scale_range": [
+        0.8435638177896588,
+        1.1527601793934643
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.2200259724513351
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.9411448394550996
+  },
+  {
+    "trial": 58,
+    "params": {
+      "learning_rate": 0.002685920338804401,
+      "weight_decay": 1.3715110651942466e-05,
+      "batch_size": 83,
+      "max_epochs": 69,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 309,
+      "rotation_degrees": 24,
+      "translation_range": 0.07342165315173638,
+      "scale_range": [
+        0.8406697618585279,
+        1.1557086492120194
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.21227352822852877
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.9169873523945902
+  },
+  {
+    "trial": 60,
+    "params": {
+      "learning_rate": 0.005957417913682208,
+      "weight_decay": 2.3334706106417725e-05,
+      "batch_size": 88,
+      "max_epochs": 64,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 347,
+      "rotation_degrees": 23,
+      "translation_range": 0.06657935876128243,
+      "scale_range": [
+        0.9527402759591825,
+        1.0636615224592976
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.14445562612392354
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.686025344437244
+  },
+  {
+    "trial": 63,
+    "params": {
+      "learning_rate": 0.0032617645720056042,
+      "weight_decay": 2.6975173630960597e-05,
+      "batch_size": 96,
+      "max_epochs": 59,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 298,
+      "rotation_degrees": 24,
+      "translation_range": 0.08262411987655832,
+      "scale_range": [
+        0.8614314279035599,
+        1.0462010056150621
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1284307425759445
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.625129198326784
+  },
+  {
+    "trial": 64,
+    "params": {
+      "learning_rate": 0.0021342722058338127,
+      "weight_decay": 1.589216398906413e-05,
+      "batch_size": 77,
+      "max_epochs": 74,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 324,
+      "rotation_degrees": 25,
+      "translation_range": 0.06268975311288721,
+      "scale_range": [
+        0.9727373025948843,
+        1.023900751839846
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1746255830541962
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.7892967996176551
+  },
+  {
+    "trial": 65,
+    "params": {
+      "learning_rate": 0.004568328428983982,
+      "weight_decay": 5.834934124716919e-05,
+      "batch_size": 76,
+      "max_epochs": 76,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 336,
+      "rotation_degrees": 22,
+      "translation_range": 0.05047720989458596,
+      "scale_range": [
+        0.9877798795725223,
+        1.0224705034219455
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.16804829072658553
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.7673781996147305
+  },
+  {
+    "trial": 66,
+    "params": {
+      "learning_rate": 0.006043584704658346,
+      "weight_decay": 1.5787399306577966e-05,
+      "batch_size": 89,
+      "max_epochs": 91,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 314,
+      "rotation_degrees": 26,
+      "translation_range": 0.06198198761175207,
+      "scale_range": [
+        0.8809648833857914,
+        1.0188999017470466
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.21550839318585235
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.9268347172176137
+  },
+  {
+    "trial": 67,
+    "params": {
+      "learning_rate": 0.002301833434858843,
+      "weight_decay": 1.1141189194905933e-05,
+      "batch_size": 102,
+      "max_epochs": 78,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 351,
+      "rotation_degrees": 20,
+      "translation_range": 0.06476637821891398,
+      "scale_range": [
+        0.9013842250435732,
+        1.0282892136654462
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.16579253419803586
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.7592613983154297
+  },
+  {
+    "trial": 68,
+    "params": {
+      "learning_rate": 0.0036959413576204154,
+      "weight_decay": 9.317454852985173e-05,
+      "batch_size": 72,
+      "max_epochs": 72,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 393,
+      "rotation_degrees": 17,
+      "translation_range": 0.055453529297879285,
+      "scale_range": [
+        0.9569978713111301,
+        1.0537669356042063
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.24514807221080584
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 1.0221980002347162
+  },
+  {
+    "trial": 69,
+    "params": {
+      "learning_rate": 0.0025996193312472562,
+      "weight_decay": 3.7115091742257494e-05,
+      "batch_size": 79,
+      "max_epochs": 68,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 328,
+      "rotation_degrees": 23,
+      "translation_range": 0.1461897195860468,
+      "scale_range": [
+        0.9374734231056723,
+        1.046934534598796
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.14720349810748365
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.6936404926402896
+  },
+  {
+    "trial": 77,
+    "params": {
+      "learning_rate": 0.004187633582306916,
+      "weight_decay": 3.519566730099618e-05,
+      "batch_size": 99,
+      "max_epochs": 57,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 279,
+      "rotation_degrees": 24,
+      "translation_range": 0.0781235824142822,
+      "scale_range": [
+        0.9155131517389904,
+        1.1095860855756454
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.07878146781895073
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.4285428208463332
+  },
+  {
+    "trial": 81,
+    "params": {
+      "learning_rate": 0.00526263577817058,
+      "weight_decay": 1.3939211378318954e-05,
+      "batch_size": 114,
+      "max_epochs": 49,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 337,
+      "rotation_degrees": 26,
+      "translation_range": 0.09722534971773877,
+      "scale_range": [
+        0.816385348414884,
+        1.1285552278624462
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.007702325380669208
+  },
+  {
+    "trial": 98,
+    "params": {
+      "learning_rate": 0.007394204570430977,
+      "weight_decay": 1.3578374075970152e-05,
+      "batch_size": 94,
+      "max_epochs": 35,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 241,
+      "rotation_degrees": 27,
+      "translation_range": 0.1202258316719372,
+      "scale_range": [
+        0.8800554067207969,
+        1.1426444746174726
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.05285055247874963
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.3155665482259264
+  },
+  {
+    "trial": 103,
+    "params": {
+      "learning_rate": 0.004831773474936098,
+      "weight_decay": 5.145776137427971e-06,
+      "batch_size": 53,
+      "max_epochs": 42,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 181,
+      "rotation_degrees": 15,
+      "translation_range": 0.06145231704781459,
+      "scale_range": [
+        0.8271526331404047,
+        1.0984979586886547
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.007657816799352326
+  },
+  {
+    "trial": 119,
+    "params": {
+      "learning_rate": 0.0034931498896105338,
+      "weight_decay": 1.358512096269341e-05,
+      "batch_size": 81,
+      "max_epochs": 74,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 370,
+      "rotation_degrees": 10,
+      "translation_range": 0.07177158713524724,
+      "scale_range": [
+        0.837055946535908,
+        1.1373436084273705
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.17544330341078643
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.7932197692113764
+  },
+  {
+    "trial": 126,
+    "params": {
+      "learning_rate": 0.0036281364713374718,
+      "weight_decay": 5.275427644080805e-06,
+      "batch_size": 83,
+      "max_epochs": 50,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 360,
+      "rotation_degrees": 28,
+      "translation_range": 0.07648297390079971,
+      "scale_range": [
+        0.8766117649793047,
+        1.1108711476864197
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.12083265939693326
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.5969369863528832
+  },
+  {
+    "trial": 129,
+    "params": {
+      "learning_rate": 0.004805158809325481,
+      "weight_decay": 1.72354680816862e-05,
+      "batch_size": 88,
+      "max_epochs": 44,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 325,
+      "rotation_degrees": 20,
+      "translation_range": 0.08546649874241478,
+      "scale_range": [
+        0.8471677139437026,
+        1.0829410280074936
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.0078105817122103
+  },
+  {
+    "trial": 130,
+    "params": {
+      "learning_rate": 0.0058939887500085685,
+      "weight_decay": 2.497919184208959e-05,
+      "batch_size": 78,
+      "max_epochs": 64,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 330,
+      "rotation_degrees": 27,
+      "translation_range": 0.08560635511204283,
+      "scale_range": [
+        0.8459758461150744,
+        1.0834637380353618
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.007656448564101833
+  },
+  {
+    "trial": 131,
+    "params": {
+      "learning_rate": 0.005892694958449202,
+      "weight_decay": 1.782934428101794e-05,
+      "batch_size": 78,
+      "max_epochs": 65,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 330,
+      "rotation_degrees": 20,
+      "translation_range": 0.08561376914565248,
+      "scale_range": [
+        0.8483496947886486,
+        1.0862986197102453
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.008404030891784608
+  },
+  {
+    "trial": 132,
+    "params": {
+      "learning_rate": 0.008162356266193282,
+      "weight_decay": 2.4882437748139217e-05,
+      "batch_size": 88,
+      "max_epochs": 72,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 322,
+      "rotation_degrees": 27,
+      "translation_range": 0.08162744692312246,
+      "scale_range": [
+        0.8444796346059402,
+        1.0787091868194463
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.010431917506150556
+  },
+  {
+    "trial": 136,
+    "params": {
+      "learning_rate": 0.006131613431495261,
+      "weight_decay": 1.9046160813569475e-05,
+      "batch_size": 85,
+      "max_epochs": 68,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 68,
+      "rotation_degrees": 19,
+      "translation_range": 0.07853378914090248,
+      "scale_range": [
+        0.8203878094650089,
+        1.0968196103038532
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.008725406490217818
+  },
+  {
+    "trial": 137,
+    "params": {
+      "learning_rate": 0.005598014732156937,
+      "weight_decay": 1.1443176083040584e-05,
+      "batch_size": 90,
+      "max_epochs": 64,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 259,
+      "rotation_degrees": 26,
+      "translation_range": 0.09515139326386655,
+      "scale_range": [
+        0.8374544095454807,
+        1.0913812300302368
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.06377019495298646
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 0.35949667727246004
+  },
+  {
+    "trial": 138,
+    "params": {
+      "learning_rate": 0.005748668380892852,
+      "weight_decay": 1.0514258568285433e-05,
+      "batch_size": 90,
+      "max_epochs": 65,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 333,
+      "rotation_degrees": 22,
+      "translation_range": 0.09628997771839301,
+      "scale_range": [
+        0.8338731714895722,
+        1.0822343397530065
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.064812214071411
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.3649660734569325
+  },
+  {
+    "trial": 139,
+    "params": {
+      "learning_rate": 0.005083392763413861,
+      "weight_decay": 1.5776474661926622e-05,
+      "batch_size": 97,
+      "max_epochs": 41,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 256,
+      "rotation_degrees": 25,
+      "translation_range": 0.10128976948652513,
+      "scale_range": [
+        0.8396408152175736,
+        1.1732679741970629
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.01174041212978661
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.10324411680301031
+  },
+  {
+    "trial": 141,
+    "params": {
+      "learning_rate": 0.004071011779129675,
+      "weight_decay": 2.1515680146364542e-05,
+      "batch_size": 88,
+      "max_epochs": 61,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 265,
+      "rotation_degrees": 24,
+      "translation_range": 0.09373891916043493,
+      "scale_range": [
+        0.8137176897571328,
+        1.0740275039142073
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.08971473479320016
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.47228198149624995
+  },
+  {
+    "trial": 142,
+    "params": {
+      "learning_rate": 0.006814943881737474,
+      "weight_decay": 9.09035526343333e-06,
+      "batch_size": 95,
+      "max_epochs": 67,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 247,
+      "rotation_degrees": 26,
+      "translation_range": 0.0826396665214184,
+      "scale_range": [
+        0.8558686752430456,
+        1.1021107768852636
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1317393492640194
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.6355380765363282
+  },
+  {
+    "trial": 143,
+    "params": {
+      "learning_rate": 0.005551755586685366,
+      "weight_decay": 9.143303751705914e-06,
+      "batch_size": 90,
+      "max_epochs": 67,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 247,
+      "rotation_degrees": 26,
+      "translation_range": 0.08297610886863584,
+      "scale_range": [
+        0.8577600014202063,
+        1.1129025557436971
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1303032208535728
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.6308092446888194
+  },
+  {
+    "trial": 147,
+    "params": {
+      "learning_rate": 0.006425598820160511,
+      "weight_decay": 1.4865104064296957e-05,
+      "batch_size": 95,
+      "max_epochs": 66,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 216,
+      "rotation_degrees": 28,
+      "translation_range": 0.08133833633987188,
+      "scale_range": [
+        0.8553906964011997,
+        1.112581419437405
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.14232819514753114
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.6761864832803315
+  },
+  {
+    "trial": 148,
+    "params": {
+      "learning_rate": 0.004817366591554792,
+      "weight_decay": 2.6956530415062157e-05,
+      "batch_size": 98,
+      "max_epochs": 64,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 231,
+      "rotation_degrees": 27,
+      "translation_range": 0.07352151218908325,
+      "scale_range": [
+        0.8267692047482833,
+        1.0973445554730814
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.10025654663816735
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.5142460096116159
+  },
+  {
+    "trial": 149,
+    "params": {
+      "learning_rate": 0.004882334953330175,
+      "weight_decay": 2.6569649422494187e-05,
+      "batch_size": 98,
+      "max_epochs": 64,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 234,
+      "rotation_degrees": 26,
+      "translation_range": 0.07650335667022341,
+      "scale_range": [
+        0.8729736605287362,
+        1.0981570321735532
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.10607281510384003
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5371223091611675
+  },
+  {
+    "trial": 153,
+    "params": {
+      "learning_rate": 0.004325514952851812,
+      "weight_decay": 9.976779766970732e-06,
+      "batch_size": 95,
+      "max_epochs": 67,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 263,
+      "rotation_degrees": 25,
+      "translation_range": 0.09160250799867997,
+      "scale_range": [
+        0.8471221611559393,
+        1.1135896733975543
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1388934076885562
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.664116082238216
+  },
+  {
+    "trial": 155,
+    "params": {
+      "learning_rate": 0.007145059828802115,
+      "weight_decay": 1.2535761720583523e-05,
+      "batch_size": 98,
+      "max_epochs": 60,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 472,
+      "rotation_degrees": 29,
+      "translation_range": 0.08519461272628817,
+      "scale_range": [
+        0.8649713656967893,
+        1.091263185775385
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.14750181555016034
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.6952935493693633
+  },
+  {
+    "trial": 160,
+    "params": {
+      "learning_rate": 0.004730841198180351,
+      "weight_decay": 2.509662289750241e-05,
+      "batch_size": 100,
+      "max_epochs": 63,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 341,
+      "rotation_degrees": 28,
+      "translation_range": 0.07140566442563055,
+      "scale_range": [
+        0.830072987558318,
+        1.0001835026072907
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.09894053217123655
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5109404886470121
+  },
+  {
+    "trial": 162,
+    "params": {
+      "learning_rate": 0.006451593480649708,
+      "weight_decay": 7.68455324545182e-06,
+      "batch_size": 75,
+      "max_epochs": 48,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 258,
+      "rotation_degrees": 24,
+      "translation_range": 0.06864278204645806,
+      "scale_range": [
+        0.9827726041809376,
+        1.1103637126828374
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.056781285060827864
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.33141400796525616
+  },
+  {
+    "trial": 166,
+    "params": {
+      "learning_rate": 0.005020017130757022,
+      "weight_decay": 3.562338520051032e-05,
+      "batch_size": 55,
+      "max_epochs": 25,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 302,
+      "rotation_degrees": 27,
+      "translation_range": 0.07920744680858133,
+      "scale_range": [
+        0.9573125330741791,
+        1.0855250546226247
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1530718245836031
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.7260011931260427
+  },
+  {
+    "trial": 177,
+    "params": {
+      "learning_rate": 0.003921840903469204,
+      "weight_decay": 1.6587882299402608e-05,
+      "batch_size": 77,
+      "max_epochs": 49,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 116,
+      "rotation_degrees": 25,
+      "translation_range": 0.06175305438625911,
+      "scale_range": [
+        0.8929272503306713,
+        1.1268675219326552
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.009518999070091655
+  },
+  {
+    "trial": 181,
+    "params": {
+      "learning_rate": 0.003360204319100392,
+      "weight_decay": 3.985541952285351e-06,
+      "batch_size": 108,
+      "max_epochs": 43,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 316,
+      "rotation_degrees": 22,
+      "translation_range": 0.06706288904226765,
+      "scale_range": [
+        0.9622228317689157,
+        1.1232073616963665
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.00909252784015467
+  },
+  {
+    "trial": 188,
+    "params": {
+      "learning_rate": 0.006040958943357894,
+      "weight_decay": 1.0486586030453029e-05,
+      "batch_size": 82,
+      "max_epochs": 51,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 292,
+      "rotation_degrees": 24,
+      "translation_range": 0.07860648740727776,
+      "scale_range": [
+        0.8094719374312022,
+        1.1188262854336168
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.12387052020103699
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.6065895224552529
+  },
+  {
+    "trial": 190,
+    "params": {
+      "learning_rate": 0.0045361201311173455,
+      "weight_decay": 9.190788758684989e-06,
+      "batch_size": 73,
+      "max_epochs": 66,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 249,
+      "rotation_degrees": 22,
+      "translation_range": 0.051480295245340556,
+      "scale_range": [
+        0.9690479674081823,
+        1.2310087852633624
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.20600692543845617
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.8963606200966181
+  },
+  {
+    "trial": 203,
+    "params": {
+      "learning_rate": 0.0013743540149342508,
+      "weight_decay": 2.0656730889780766e-05,
+      "batch_size": 50,
+      "max_epochs": 65,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 398,
+      "rotation_degrees": 21,
+      "translation_range": 0.07210758959348068,
+      "scale_range": [
+        0.7804148548217619,
+        1.290945445707026
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.20622235305293538
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.8988562939213771
+  },
+  {
+    "trial": 216,
+    "params": {
+      "learning_rate": 0.005156464531343056,
+      "weight_decay": 2.7780501783447728e-05,
+      "batch_size": 90,
+      "max_epochs": 59,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 466,
+      "rotation_degrees": 15,
+      "translation_range": 0.06280288892473351,
+      "scale_range": [
+        0.9045131245790906,
+        1.0729179003235758
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.008612611317306907
+  },
+  {
+    "trial": 222,
+    "params": {
+      "learning_rate": 0.005380132973345413,
+      "weight_decay": 1.472625994764664e-05,
+      "batch_size": 98,
+      "max_epochs": 41,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 249,
+      "rotation_degrees": 28,
+      "translation_range": 0.06510356076235914,
+      "scale_range": [
+        0.8241983363718082,
+        1.1079564552678816
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.09588943047623513
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5046761964816673
+  },
+  {
+    "trial": 224,
+    "params": {
+      "learning_rate": 0.004872732011207818,
+      "weight_decay": 1.2032658315801043e-05,
+      "batch_size": 100,
+      "max_epochs": 65,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 277,
+      "rotation_degrees": 26,
+      "translation_range": 0.061507237139707904,
+      "scale_range": [
+        0.8294428073994058,
+        1.1013558331479698
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.10651910483728252
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5390935446701798
+  },
+  {
+    "trial": 227,
+    "params": {
+      "learning_rate": 0.006300597015250739,
+      "weight_decay": 1.4836624721071957e-05,
+      "batch_size": 108,
+      "max_epochs": 69,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 332,
+      "rotation_degrees": 26,
+      "translation_range": 0.05163744411583623,
+      "scale_range": [
+        0.8394342703697321,
+        1.011266784720222
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.08746977283652402
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.46236222961369683
+  },
+  {
+    "trial": 229,
+    "params": {
+      "learning_rate": 0.002557361579100821,
+      "weight_decay": 2.2620933713795494e-05,
+      "batch_size": 98,
+      "max_epochs": 52,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 283,
+      "rotation_degrees": 17,
+      "translation_range": 0.09579178386947501,
+      "scale_range": [
+        0.966377980018571,
+        1.088276017238263
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.055518190088157775
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.3268586008221495
+  },
+  {
+    "trial": 234,
+    "params": {
+      "learning_rate": 0.0046489881011792826,
+      "weight_decay": 3.8333157332955035e-05,
+      "batch_size": 82,
+      "max_epochs": 69,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 126,
+      "rotation_degrees": 24,
+      "translation_range": 0.08132371272560161,
+      "scale_range": [
+        0.7009826765201053,
+        1.1144611341688717
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.11838704433890576
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5865327131514456
+  },
+  {
+    "trial": 236,
+    "params": {
+      "learning_rate": 0.0072656138935325385,
+      "weight_decay": 9.457141615027794e-06,
+      "batch_size": 78,
+      "max_epochs": 63,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 96,
+      "rotation_degrees": 22,
+      "translation_range": 0.06958787399474235,
+      "scale_range": [
+        0.9568959338791722,
+        1.0140261661070593
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1925950305817889
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.8514114406529595
+  },
+  {
+    "trial": 240,
+    "params": {
+      "learning_rate": 0.004428351901341626,
+      "weight_decay": 2.5289464111012633e-05,
+      "batch_size": 103,
+      "max_epochs": 70,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 105,
+      "rotation_degrees": 27,
+      "translation_range": 0.06453734985815943,
+      "scale_range": [
+        0.7408116078700088,
+        1.1239603008959016
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1018444680809406
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.5210063650561314
+  },
+  {
+    "trial": 241,
+    "params": {
+      "learning_rate": 0.0029699931197612176,
+      "weight_decay": 1.5814578995441152e-06,
+      "batch_size": 80,
+      "max_epochs": 37,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 304,
+      "rotation_degrees": 20,
+      "translation_range": 0.08260189401487873,
+      "scale_range": [
+        0.8425179291074518,
+        1.0930972536643155
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.061463802541493535
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.35447159280963975
+  },
+  {
+    "trial": 253,
+    "params": {
+      "learning_rate": 0.005534963997585778,
+      "weight_decay": 2.718895230112239e-05,
+      "batch_size": 77,
+      "max_epochs": 51,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 206,
+      "rotation_degrees": 28,
+      "translation_range": 0.08300421100440736,
+      "scale_range": [
+        0.9114908074343709,
+        1.0876722214349057
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 0.007262927391710874
+  },
+  {
+    "trial": 256,
+    "params": {
+      "learning_rate": 0.004571168470129705,
+      "weight_decay": 2.23154727718082e-05,
+      "batch_size": 78,
+      "max_epochs": 49,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 178,
+      "rotation_degrees": 28,
+      "translation_range": 0.09995882637489757,
+      "scale_range": [
+        0.9028734680600264,
+        1.08998374687838
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 0.006380555181061508
+  },
+  {
+    "trial": 262,
+    "params": {
+      "learning_rate": 0.0038634915557167857,
+      "weight_decay": 3.7480751023629076e-05,
+      "batch_size": 57,
+      "max_epochs": 46,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 201,
+      "rotation_degrees": 28,
+      "translation_range": 0.10664188578932668,
+      "scale_range": [
+        0.788283211481444,
+        1.0942705411690874
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.008852132418653449
+  },
+  {
+    "trial": 263,
+    "params": {
+      "learning_rate": 0.00472241009552498,
+      "weight_decay": 2.128417397892066e-05,
+      "batch_size": 114,
+      "max_epochs": 48,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 252,
+      "rotation_degrees": 27,
+      "translation_range": 0.09188477063571272,
+      "scale_range": [
+        0.8987239743882814,
+        1.1017436197390433
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.007912038484710672
+  },
+  {
+    "trial": 280,
+    "params": {
+      "learning_rate": 0.0032807292655024937,
+      "weight_decay": 1.740868683511417e-05,
+      "batch_size": 94,
+      "max_epochs": 70,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 262,
+      "rotation_degrees": 18,
+      "translation_range": 0.1313202522667118,
+      "scale_range": [
+        0.8355986196503131,
+        1.1265931823700372
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1583003054154906
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.733732032027899
+  },
+  {
+    "trial": 284,
+    "params": {
+      "learning_rate": 0.004661006205611062,
+      "weight_decay": 0.00012472608115384032,
+      "batch_size": 117,
+      "max_epochs": 59,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 331,
+      "rotation_degrees": 11,
+      "translation_range": 0.09613181537311741,
+      "scale_range": [
+        0.9068644340993172,
+        1.1135608629493474
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.13355022429802763
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.6440456355319304
+  },
+  {
+    "trial": 294,
+    "params": {
+      "learning_rate": 0.003999997699847863,
+      "weight_decay": 1.6922561087802974e-05,
+      "batch_size": 121,
+      "max_epochs": 60,
+      "conv_channels": [
+        64,
+        128,
+        256
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 195,
+      "rotation_degrees": 29,
+      "translation_range": 0.09058255377393047,
+      "scale_range": [
+        0.8321096389703605,
+        1.15532327103242
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.009994959241129097
+  },
+  {
+    "trial": 299,
+    "params": {
+      "learning_rate": 0.004983506206312412,
+      "weight_decay": 1.5736337539968333e-05,
+      "batch_size": 109,
+      "max_epochs": 49,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 407,
+      "rotation_degrees": 14,
+      "translation_range": 0.10125003652171792,
+      "scale_range": [
+        0.8741159473514113,
+        1.0796211574310157
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.18070786557713642
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.8118422327088375
+  },
+  {
+    "trial": 304,
+    "params": {
+      "learning_rate": 0.003039339854470208,
+      "weight_decay": 6.460850700474912e-06,
+      "batch_size": 83,
+      "max_epochs": 41,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 222,
+      "rotation_degrees": 25,
+      "translation_range": 0.08156401461534037,
+      "scale_range": [
+        0.8191302747053898,
+        1.1986802913056855
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.1543498062288006
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.7212170661196989
+  },
+  {
+    "trial": 306,
+    "params": {
+      "learning_rate": 0.00524278418896274,
+      "weight_decay": 3.819891205749313e-06,
+      "batch_size": 61,
+      "max_epochs": 50,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 157,
+      "rotation_degrees": 17,
+      "translation_range": 0.08486634444120457,
+      "scale_range": [
+        0.8104403672787139,
+        1.1181169022667101
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.22070971180464286
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.9454968836260776
+  },
+  {
+    "trial": 311,
+    "params": {
+      "learning_rate": 0.0019973221673307362,
+      "weight_decay": 3.525301759665638e-05,
+      "batch_size": 81,
+      "max_epochs": 66,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 341,
+      "rotation_degrees": 27,
+      "translation_range": 0.06686779761472425,
+      "scale_range": [
+        0.8518714203817098,
+        1.0537870989827536
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.09576671434898833
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.4966559595220229
+  },
+  {
+    "trial": 314,
+    "params": {
+      "learning_rate": 0.0023558340868225164,
+      "weight_decay": 5.662471736660149e-05,
+      "batch_size": 46,
+      "max_epochs": 72,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 325,
+      "rotation_degrees": 28,
+      "translation_range": 0.10511666165057384,
+      "scale_range": [
+        0.9493770569995719,
+        1.234632821310056
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.009013089906288324
+  },
+  {
+    "trial": 318,
+    "params": {
+      "learning_rate": 0.004257996801134065,
+      "weight_decay": 2.275884004397005e-05,
+      "batch_size": 91,
+      "max_epochs": 43,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 302,
+      "rotation_degrees": 26,
+      "translation_range": 0.07234319377791097,
+      "scale_range": [
+        0.838699150280699,
+        1.1210312287266126
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.008138459614860682
+  },
+  {
+    "trial": 319,
+    "params": {
+      "learning_rate": 0.004306600798455493,
+      "weight_decay": 2.2771945702863526e-05,
+      "batch_size": 91,
+      "max_epochs": 42,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 448,
+      "rotation_degrees": 26,
+      "translation_range": 0.07217574954661016,
+      "scale_range": [
+        0.8378360614987208,
+        1.1227230394888408
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.009285130720184087
+  },
+  {
+    "trial": 320,
+    "params": {
+      "learning_rate": 0.0034345442742398065,
+      "weight_decay": 2.3247546088183143e-05,
+      "batch_size": 92,
+      "max_epochs": 42,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 458,
+      "rotation_degrees": 5,
+      "translation_range": 0.07253216064148146,
+      "scale_range": [
+        0.8363293663884659,
+        1.1245987345584563
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.009979741975468784
+  },
+  {
+    "trial": 335,
+    "params": {
+      "learning_rate": 0.002922812806392736,
+      "weight_decay": 6.012319344692497e-06,
+      "batch_size": 58,
+      "max_epochs": 52,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 433,
+      "rotation_degrees": 27,
+      "translation_range": 0.0787491428014277,
+      "scale_range": [
+        0.985642510524448,
+        1.133089607048011
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.18648170682568618
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.832636786629172
+  },
+  {
+    "trial": 345,
+    "params": {
+      "learning_rate": 0.0023559213011584094,
+      "weight_decay": 7.129830351378403e-06,
+      "batch_size": 89,
+      "max_epochs": 54,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 358,
+      "rotation_degrees": 26,
+      "translation_range": 0.0961755709005653,
+      "scale_range": [
+        0.9273595321568393,
+        1.1132700607440684
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.2823589851882378
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 1.1339795809166104
+  },
+  {
+    "trial": 348,
+    "params": {
+      "learning_rate": 0.0031778227390253933,
+      "weight_decay": 4.813929948292233e-06,
+      "batch_size": 95,
+      "max_epochs": 57,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 275,
+      "rotation_degrees": 26,
+      "translation_range": 0.05321921987752089,
+      "scale_range": [
+        0.9134670184754549,
+        1.2182002694428262
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 0.0070688065095715034
+  },
+  {
+    "trial": 361,
+    "params": {
+      "learning_rate": 0.003424477682026762,
+      "weight_decay": 2.295594152314986e-05,
+      "batch_size": 88,
+      "max_epochs": 40,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 289,
+      "rotation_degrees": 26,
+      "translation_range": 0.06394323722745851,
+      "scale_range": [
+        0.903694208937346,
+        1.209621084611097
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9980392156862745,
+    "val_loss": 0.011021139550698446
+  },
+  {
+    "trial": 374,
+    "params": {
+      "learning_rate": 0.0036992690265951257,
+      "weight_decay": 1.1648819717185076e-05,
+      "batch_size": 70,
+      "max_epochs": 69,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.25,
+        0.5
+      ],
+      "dense_size": 318,
+      "rotation_degrees": 24,
+      "translation_range": 0.08281499218828141,
+      "scale_range": [
+        0.9461374685008217,
+        1.0673404920878675
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.11607232945506701
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.5768381749882417
+  },
+  {
+    "trial": 375,
+    "params": {
+      "learning_rate": 0.005286976647201187,
+      "weight_decay": 1.906269777863586e-05,
+      "batch_size": 76,
+      "max_epochs": 74,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 467,
+      "rotation_degrees": 23,
+      "translation_range": 0.07962013197957506,
+      "scale_range": [
+        0.846552860005398,
+        1.1046180362124642
+      ],
+      "loss_name": "cross_entropy",
+      "label_smoothing": 0.0
+    },
+    "val_accuracy": 0.9988235294117647,
+    "val_loss": 0.007298556061845839
+  },
+  {
+    "trial": 382,
+    "params": {
+      "learning_rate": 0.006110974632936962,
+      "weight_decay": 6.028515213347509e-06,
+      "batch_size": 81,
+      "max_epochs": 39,
+      "conv_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout_rates": [
+        0.3,
+        0.6
+      ],
+      "dense_size": 221,
+      "rotation_degrees": 26,
+      "translation_range": 0.05001413298566557,
+      "scale_range": [
+        0.8962599090931065,
+        1.0959530198377505
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.14667716669982103
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 0.6953382277488709
+  },
+  {
+    "trial": 387,
+    "params": {
+      "learning_rate": 0.005542147490230602,
+      "weight_decay": 1.648725587230953e-05,
+      "batch_size": 75,
+      "max_epochs": 56,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 450,
+      "rotation_degrees": 25,
+      "translation_range": 0.06600024632906634,
+      "scale_range": [
+        0.9999329844569976,
+        1.0173557751403817
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.25013687418053265
+    },
+    "val_accuracy": 0.9996078431372549,
+    "val_loss": 1.036677262362312
+  },
+  {
+    "trial": 388,
+    "params": {
+      "learning_rate": 0.005693169631308238,
+      "weight_decay": 1.7135933922095906e-05,
+      "batch_size": 73,
+      "max_epochs": 56,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 452,
+      "rotation_degrees": 24,
+      "translation_range": 0.06533286461822584,
+      "scale_range": [
+        0.9889312485671653,
+        1.0158545670549533
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.2503979214227846
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 1.0377583926331764
+  },
+  {
+    "trial": 392,
+    "params": {
+      "learning_rate": 0.004502244099600482,
+      "weight_decay": 2.414961990646831e-05,
+      "batch_size": 74,
+      "max_epochs": 69,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 450,
+      "rotation_degrees": 27,
+      "translation_range": 0.0659306697170981,
+      "scale_range": [
+        0.8491844223487814,
+        1.0229091919976894
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.25662468890185347
+    },
+    "val_accuracy": 0.9984313725490196,
+    "val_loss": 1.056249316252914
+  },
+  {
+    "trial": 395,
+    "params": {
+      "learning_rate": 0.003958531209309823,
+      "weight_decay": 2.042953186430178e-05,
+      "batch_size": 113,
+      "max_epochs": 56,
+      "conv_channels": [
+        32,
+        64,
+        128
+      ],
+      "dropout_rates": [
+        0.2,
+        0.4
+      ],
+      "dense_size": 196,
+      "rotation_degrees": 25,
+      "translation_range": 0.057447518016901816,
+      "scale_range": [
+        0.9495527082021936,
+        1.102557975029901
+      ],
+      "loss_name": "cross_entropy_ls",
+      "label_smoothing": 0.15036946089341677
+    },
+    "val_accuracy": 0.9992156862745099,
+    "val_loss": 0.7054716981859768
+  }
+]
