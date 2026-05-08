@@ -50,7 +50,7 @@ What Step 1 does:
 3. Creates stratified train/validation split (default val_ratio = 0.15)
 4. Computes mean/std from training split only
 5. Applies train-only augmentation:
-- RandomRotation (+/-15)
+- RandomRotation (+/-27)
 - RandomAffine (translation, slight zoom, slight shear)
 6. Builds train and validation DataLoaders
 
